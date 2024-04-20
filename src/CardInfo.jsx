@@ -19,7 +19,7 @@ const CardInfo = ({ infors }) => {
           <h3 className="uppercase text-gray-400">
             <span className="font-semibold">Date of birth</span>
             <span className="block text-black font-bold">
-              {infors.dateOfBirth}
+              {infors.dateOfBirth.toDateString()}
             </span>
           </h3>
           <h3 className="uppercase text-gray-400 px-4">

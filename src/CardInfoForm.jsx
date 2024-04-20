@@ -1,17 +1,14 @@
 import { useState } from "react";
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import Button from "./Button";
 
 const CardInfoForm = ({ onAddForm }) => {
-  // const [formDetails, setFormDetails] = useState({
-  //   surName: "",
-  //   otherName: "",
-  //   dateOfBirth: "",
-  //   sex: "",
-  // });
-  const [surName, setSurame] = useState("");
+  const [surName, setSurName] = useState("");
   const [otherName, setOtherName] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState(new Date());
   const [sex, setSex] = useState("");
 
   function handleSubmit(e) {
@@ -28,11 +25,10 @@ const CardInfoForm = ({ onAddForm }) => {
     };
     onAddForm(newInfo);
 
-    setSurame("");
+    setSurName("");
     setOtherName("");
     setDateOfBirth("");
     setSex("");
-    // console.log(onAddForm);
   }
   return (
     <form
@@ -48,7 +44,7 @@ const CardInfoForm = ({ onAddForm }) => {
         <input
           type="text"
           value={surName}
-          onChange={(e) => setSurame(e.target.value)}
+          onChange={(e) => setSurName(e.target.value)}
           className="w-40 mx-auto rounded-md"
         />
       </div>
@@ -67,12 +63,20 @@ const CardInfoForm = ({ onAddForm }) => {
         <label className="text-center capitalize font-bold   px-4">
           Date of Birth
         </label>
-        <input
+        {/* <input
           type="text"
           value={dateOfBirth}
-          onChange={(e) => setDateOfBirth(e.target.value)}
+          // onChange={(e) => setDateOfBirth(e.target.value)}
+
           className="w-40 mx-auto rounded-md "
-        />
+        /> */}
+        {
+          <DatePicker
+            selected={dateOfBirth}
+            onChange={(date) => setDateOfBirth(date.target.value)}
+            className="w-40 mx-auto rounded-md "
+          />
+        }
       </div>
 
       <div className="flex py-4">

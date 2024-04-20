@@ -16,7 +16,7 @@ function App() {
     const newInfo = infor;
     setInfors(newInfo);
     setShowForm(false);
-    setShowCard(true);
+    setShowCard((show) => !show);
   }
 
   return (

@@ -1,14 +1,6 @@
 import CardInfo from "./CardInfo";
 import barcode from "./assets/barcode.jpeg";
 
-// const Info = [
-//   {
-//     surName: "Akachukwu",
-//     otherName: "Kelechi Vincent",
-//     dateOfBirth: "18 &nbsp; Jan, &nbsp; 1990",
-//     sex: "M",
-//   },
-// ];
 function NinCard({ onAddForm, infors }) {
   console.log(infors);
   return (

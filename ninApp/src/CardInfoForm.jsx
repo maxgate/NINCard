@@ -3,16 +3,16 @@ import { useState } from "react";
 import Button from "./Button";
 
 const CardInfoForm = ({ onAddForm }) => {
-  const [formDetails, setFormDetails] = useState({
-    surName: "",
-    otherName: "",
-    dateOfBirth: "",
-    sex: "",
-  });
-  // const [surName, setSurame] = useState("");
-  // const [otherName, setOtherName] = useState("");
-  // const [dateOfBirth, setDateOfBirth] = useState("");
-  // const [sex, setSex] = useState("");
+  // const [formDetails, setFormDetails] = useState({
+  //   surName: "",
+  //   otherName: "",
+  //   dateOfBirth: "",
+  //   sex: "",
+  // });
+  const [surName, setSurame] = useState("");
+  const [otherName, setOtherName] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [sex, setSex] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,8 +47,8 @@ const CardInfoForm = ({ onAddForm }) => {
         <label className="text-center capitalize font-bold ">Surname</label>
         <input
           type="text"
-          value={formDetails.surName}
-          onChange={(e) => setformDetails((prev)=>{ ...prev, surName:e.target.value} )}
+          value={surName}
+          onChange={(e) => setSurame(e.target.value)}
           className="w-40 mx-auto rounded-md"
         />
       </div>

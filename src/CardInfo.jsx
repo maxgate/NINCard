@@ -18,13 +18,13 @@ const CardInfo = ({ infors }) => {
         <div className="flex">
           <h3 className="uppercase text-gray-400">
             <span className="font-semibold">Date of birth</span>
-            <span className="block text-black font-bold">
+            <span className="block text-black font-bold text-sm">
               {infors.dateOfBirth.toDateString()}
             </span>
           </h3>
           <h3 className="uppercase text-gray-400 px-4">
             <span className="font-semibold">sex/sexe</span>
-            <span className="block text-black font-bold">{infors.sex}</span>
+            <span className="block text-black font-bold text-center">{infors.sex}</span>
           </h3>
         </div>
       </div>

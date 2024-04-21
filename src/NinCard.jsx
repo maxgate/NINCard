@@ -3,6 +3,11 @@ import barcode from "./assets/barcode.jpeg";
 
 function NinCard({ onAddForm, infors }) {
   console.log(infors);
+  const date = new Date();
+
+  const uniqueId = new Uint32Array(1);
+  self.crypto.getRandomValues(uniqueId);
+
   return (
     <div>
       <div className="grid grid-cols-3 rounded-lg px-4 ">
@@ -22,18 +27,20 @@ function NinCard({ onAddForm, infors }) {
             <h3 className="uppercase text-gray-400 px-4 ">
               <span className="text-center font-semibold">Issue date</span>
               <span className="block text-black font-bold">
-                30 &nbsp; jun &nbsp;2020
+                {`${date.getDate()}/ ${
+                  date.getMonth() + 1
+                }/ ${date.getFullYear()}`}
               </span>
             </h3>
           </div>
         </div>
       </div>
       <div className="lg:px-20 px-8">
-        <p className=" capitalize font-bold lg:px-8 text-sm lg:text-md ">
+        <p className=" capitalize font-bold lg:px- text-sm lg:text-lg text-gray-900 ">
           National identification Number(NIN)
         </p>
-        <h1 className=" capitalize font-bold text-md lg:text-4xl">
-          2809 &nbsp; 023 &nbsp; 2908
+        <h1 className=" capitalize font-bold text-md lg:text-3xl px-8">
+          {uniqueId}0
         </h1>
       </div>
     </div>

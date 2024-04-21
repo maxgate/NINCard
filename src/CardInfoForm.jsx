@@ -8,7 +8,7 @@ import Button from "./Button";
 const CardInfoForm = ({ onAddForm }) => {
   const [surName, setSurName] = useState("");
   const [otherName, setOtherName] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState();
   const [sex, setSex] = useState("");
 
   function handleSubmit(e) {

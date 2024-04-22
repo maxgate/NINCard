@@ -1,3 +1,4 @@
+import QRCode from "react-qr-code";
 import CardInfo from "./CardInfo";
 import barcode from "./assets/barcode.jpeg";
 
@@ -21,8 +22,11 @@ function NinCard({ onAddForm, infors }) {
         </div>
 
         <div className="col-span-1 flex flex-col items-center">
-          <img src={barcode} alt="bar code" className="w-80  " />
+          {/* <img src={barcode} alt="bar code" className="w-80  " /> */}
+          <QRCode value={-(uniqueId)} size={180} className="py-4"/>
+
           <h2 className="text-center font-bold text-lg">NGA</h2>
+
           <div>
             <h3 className="uppercase text-gray-400 px-4 ">
               <span className="text-center font-semibold">Issue date</span>

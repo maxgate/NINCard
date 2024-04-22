@@ -13,31 +13,39 @@ function App() {
   }, []);
   function handleShowForm() {
     setShowForm((show) => !show);
+    setShowCard(false);
   }
 
   function handleGenerateCard(infor) {
     const newInfo = infor;
     setInfors(newInfo);
     setShowForm(!ShowForm);
-    setShowCard(!showCard);
+    setShowCard((show) => !show);
   }
 
   return (
     <>
       <div className="text-center font-bold pt-4">
-        <p className="text-gray-100 text-2xl pb-4">Welcome to NIN Generating Site</p>
+        <p className="text-gray-100 text-2xl pb-2">
+          Welcome to NIN Generating Site
+        </p>
         <Button onClick={handleShowForm}>
           {ShowForm ? "Close" : "Click Here to proceed"}
         </Button>
       </div>
-      <div className="px-6 pt-4 ">
-        {ShowForm && (
-          <CardInfoForm onAddForm={handleGenerateCard} infors={infors} />
-        )}
-      </div>
 
-      <div className="  my-12  bg-white rounded-lg w-full lg:w-1/2 md:mx-auto">
-        {showCard && <NinCard onAddForm={handleGenerateCard} infors={infors} />}
+      <div className="">
+        <div className="px-6 pt-">
+          {ShowForm && (
+            <CardInfoForm onAddForm={handleGenerateCard} infors={infors} />
+          )}
+        </div>
+
+        <div className="  my-8 bg-white rounded-lg w-full lg:w-1/2 md:mx-auto">
+          {showCard && (
+            <NinCard onAddForm={handleGenerateCard} infors={infors} />
+          )}
+        </div>
       </div>
     </>
   );

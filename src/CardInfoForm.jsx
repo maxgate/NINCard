@@ -8,7 +8,7 @@ import Button from "./Button";
 const CardInfoForm = ({ onAddForm }) => {
   const [surName, setSurName] = useState("");
   const [otherName, setOtherName] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState();
+  const [dateOfBirth, setDateOfBirth] = useState(null);
   const [sex, setSex] = useState("");
 
   function handleSubmit(e) {
@@ -63,13 +63,7 @@ const CardInfoForm = ({ onAddForm }) => {
         <label className="text-center capitalize font-bold   px-4">
           Date of Birth
         </label>
-        {/* <input
-          type="text"
-          value={dateOfBirth}
-          // onChange={(e) => setDateOfBirth(e.target.value)}
 
-          className="w-40 mx-auto rounded-md "
-        /> */}
         {
           <DatePicker
             selected={dateOfBirth}

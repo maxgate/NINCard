@@ -1,6 +1,5 @@
 import QRCode from "react-qr-code";
 import CardInfo from "./CardInfo";
-import barcode from "./assets/barcode.jpeg";
 
 function NinCard({ onAddForm, infors }) {
   console.log(infors);
@@ -8,6 +7,7 @@ function NinCard({ onAddForm, infors }) {
 
   const uniqueId = new Uint32Array(1);
   self.crypto.getRandomValues(uniqueId);
+
   const qRcode = uniqueId.toString();
 
   return (
@@ -23,7 +23,6 @@ function NinCard({ onAddForm, infors }) {
         </div>
 
         <div className="col-span-1 flex flex-col items-center">
-          {/* <img src={barcode} alt="bar code" className="w-80  " /> */}
           <QRCode value={qRcode} size={180} className="py-4" />
 
           <h2 className="text-center font-bold text-lg">NGA</h2>
@@ -45,7 +44,7 @@ function NinCard({ onAddForm, infors }) {
           National identification Number(NIN)
         </p>
         <h1 className=" capitalize font-bold text-md lg:text-3xl px-8">
-          {uniqueId}0
+          {qRcode}
         </h1>
       </div>
     </div>

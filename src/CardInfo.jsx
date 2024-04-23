@@ -1,5 +1,3 @@
-import image from "./assets/image.png";
-
 const CardInfo = ({ infors }) => {
   console.log(infors);
 

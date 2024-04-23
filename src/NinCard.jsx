@@ -8,6 +8,7 @@ function NinCard({ onAddForm, infors }) {
 
   const uniqueId = new Uint32Array(1);
   self.crypto.getRandomValues(uniqueId);
+  const qRcode = uniqueId.toString();
 
   return (
     <div>
@@ -23,7 +24,7 @@ function NinCard({ onAddForm, infors }) {
 
         <div className="col-span-1 flex flex-col items-center">
           {/* <img src={barcode} alt="bar code" className="w-80  " /> */}
-          <QRCode value={-(uniqueId)} size={180} className="py-4"/>
+          <QRCode value={qRcode} size={180} className="py-4" />
 
           <h2 className="text-center font-bold text-lg">NGA</h2>
 
